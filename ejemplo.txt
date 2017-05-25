@@ -1,0 +1,12 @@
+Escherichia coli is able to use trehalose [O-U-D-glucosyl-a-D-glucoside] as a carbon source but can also synthesize and accumulate trehalose as an osmoprotectant when grown in high-osmolarity medium .
+We studied the effects of BMP-6 on proliferation and apoptosis on resting and simulated B cells.
+However , cAMP caused a large ( 15 - fold ) stimulation of nagE and a 2.5 - fold stimulation of nagB when the CAP site was located at its functional distance .
+To our knowledge , this " consensus " Fnr - dependent dmsA promoter exhibits the highest anaerobic induction of any Fnr - regulated E . coli promoter examined .
+This result indicates that in the presence of RhaR , - CTD can contribute to transcription activation at rhaSR , perhaps by interaction with DNA and / or RhaR .
+While this work was being completed , Ruiz et al . ( 41 ) independently reported the identification of lysP as a Lys - repressed transcriptional target of ArgP .
+Effects of S and the transcriptional activator AppY on induction of the Escherichia coli and cbdAB - appA operons in response to carbon and phosphate starvation .
+The nitrate induction of fdnG expression occurs at the level of transcription control , where NarL is a strong activator and NarP is a weak activator ( 11 , 20 ) .
+More recently , the DcuS - DcuR regulatory system has been identified as mediating dicarboxylate - responsive activation of frdA operon transcription ( 17 , 67 ) .
+We found that this repression is AraC dependent and involves a mechanism where arabinose - bound AraC binds to the xylose promoters and represses gene expression .
+In contrast , with four of the mutants ( FL53 , PS81 , TA117 , and ND183 ) , melibiose induces pmelAB activity , but to a lesser level than with wild - type MelR .
+Effects of s and the transcriptional activator AppY on induction of the Escherichia coli hya and cbd â€“ appA operons in response to carbon and phosphate starvation .
