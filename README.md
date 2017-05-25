@@ -10,7 +10,7 @@ This is a linux shell script that can be run with the following command:
 
 ```./main_shell_script.sh```
 
-Please note that the script will iSimp to be stored in the same path ```main_shell_script.sh``` is. 
+Please note that the script will expect iSimp to be stored in the same path ```main_shell_script.sh``` is. 
 
 # INPUT
 
