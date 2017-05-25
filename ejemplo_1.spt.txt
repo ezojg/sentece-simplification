@@ -1,0 +1,17 @@
+TYPE: sentence[0..200]
+TEXT: Escherichia coli is able to use trehalose [O-U-D-glucosyl-a-D-glucoside] as a carbon source but can also synthesize and accumulate trehalose as an osmoprotectant when grown in high-osmolarity medium .
+POS : Escherichia_FW coli_FW is_VBZ able_JJ to_TO use_VB trehalose_NN -LSB-_-LRB- O-U-D-glucosyl-a-D-glucoside_NN -RSB-_-RRB- as_IN a_DT carbon_NN source_NN but_CC can_MD also_RB synthesize_VB and_CC accumulate_VB trehalose_NN as_IN an_DT osmoprotectant_NN when_WRB grown_VBN in_IN high-osmolarity_JJ medium_NN ._. 
+TREE: (ROOT (SINV (ADVP (FW Escherichia) (FW coli)) (VP (VBZ is) (ADJP (JJ able) (S (VP (TO to) (VP (VP (VB use) (NP (NN trehalose) (PRN (-LRB- -LSB-) (NN O-U-D-glucosyl-a-D-glucoside) (-RRB- -RSB-))) (PP (IN as) (NP (DT a) (NN carbon) (NN source)))) (CC but) (VP (MD can) (ADVP (RB also)) (VP (VP (VB synthesize) (CC and) (VB accumulate)) (NP (NN trehalose)) (PP (IN as) (NP (DT an) (NN osmoprotectant)))))))))) (SBAR (WHADVP (WRB when)) (S (VP (VBN grown) (PP (IN in) (NP (JJ high-osmolarity) (NN medium)))))) (. .)))
+SIMP:
+  TYPE: verb or verb phrase coordination[28..161]
+  TEXT: use trehalose [O-U-D-glucosyl-a-D-glucoside] as a carbon source but can also synthesize and accumulate trehalose as an osmoprotectant
+  COMP: conjunct[28..91]
+  COMP: conjunction[92..95]
+  COMP: conjunct[96..161]
+SIMP:
+  TYPE: verb or verb phrase coordination[105..130]
+  TEXT: synthesize and accumulate
+  COMP: conjunct[105..115]
+  COMP: conjunction[116..119]
+  COMP: conjunct[120..130]
+
