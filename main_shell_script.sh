@@ -1,13 +1,14 @@
 #!/bin/bash
-#El script está en carpeta superior que los archivos de texto
-SCRIPT_PATH=/home/elwe/Documents/Pipeline_iSimp
+
+
+SCRIPT_PATH=$(cd `dirname $0` && pwd)
 #Define aquí la palabra clave del grupo de oraciones a simplificar.
 BATCH_KEYWORD=ejemplo
 
 cd $SCRIPT_PATH
 
 
-#clearfile
+
 #ELIMINAR FORMATO DE ARTÍCULO CON "SANITIZADOR"
 echo "Sanitizing text for $BATCH_KEYWORD batch..."
 rm ./sanitized_sentences/*
@@ -47,14 +48,13 @@ cd $SCRIPT_PATH
 
 
 
-#ALIMENTAR A ALGORITMO #dará error a menos que se le dé de a una oración
+#ALIMENTAR A ALGORITMO 
 echo "Analysing in Algorithm..."
 cd ./iSimp_sentences
 for k in $(\ls $BATCH_KEYWORD*)
 do
 	echo $k
 	python2 $SCRIPT_PATH/simplifier.py $SCRIPT_PATH/iSimp_sentences/$k $SCRIPT_PATH/algorithm_sentences/$k
-#el programa de josé suelta las oraciones en el mismo directorio, hacer que las lleve a ./algorithm_sentences
 done
 cd $SCRIPT_PATH
 
