@@ -19,4 +19,4 @@ The script will analize all files with a shared keyword, specified in ```BATCH_K
 
 # OUTPUT 
 
-Simplified sentences will be stores one sentence per file under ```algorithm_sentences```.
+Simplified sentences will be stored one sentence per file under ```algorithm_sentences```.
