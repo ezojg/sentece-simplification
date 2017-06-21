@@ -8,14 +8,14 @@ This script needs iSimp for simplificable constructs' identification. You can fi
 
 This is a linux shell script that can be run with the following command:
 
-```./main_shell_script.sh```
+```./sentence-simplification-main.sh```
 
-Please note that the script will expect iSimp to be stored in the same path ```main_shell_script.sh``` is. 
+Please note that the script will expect iSimp to be stored in the same path ```sentence-simplification-main.sh``` is. 
 
 # INPUT
 
 The script expects tokenized text with one sentence per line, in files ```*.txt``` stored in ```10pack_sentences```.
-The script will analize all files with a shared keyword, specified in ```BATCH_KEYWORD```in ```main_shell_script.sh```.
+The script will analize all files with a shared keyword, specified in ```BATCH_KEYWORD```in ```sentence-simplification-main.sh```.
 
 # OUTPUT 
 
