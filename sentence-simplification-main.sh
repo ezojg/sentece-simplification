@@ -60,7 +60,7 @@ cd $SCRIPT_PATH
 
 #ANALIZAR EN ISIMP
 echo "Analysing in iSimp..."
-if [ -z "$(ls -A ../iSimp_sentences/)" ]; then
+if [ -z "$(ls -A ./iSimp_sentences/)" ]; then
    echo "directory is clean."
 else
    #echo "Not Empty"
