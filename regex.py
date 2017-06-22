@@ -20,7 +20,7 @@ text_file.close()
 split_line = sys.argv[2]
 split_line = split_line[:-4]
 file_name=""
-file_name = split_line + ".san.txt"
+file_name = split_line + ".san"
 open( file_name , 'w').close()
 
 #ESCRIBIR REGEX EN ARGV 2
@@ -37,4 +37,3 @@ for line in dato:
     save_file.write(line)
     save_file.write("\n")
     save_file.close()
-
