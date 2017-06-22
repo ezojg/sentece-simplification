@@ -388,36 +388,29 @@ if ((frase.TYPE.find('sentence')) !=- 1) and (frase.SIMP!=[]) and (frase.SIMP[0]
       arcsalnum = arcsalnum + 1
       print MEMORIAB[i].TEXT#Salida 
       archSalNombre = sys.argv[2]
-      archSalNombre=archSalNombre[:-8] + "_" + (str)(arcsalnum)+ '.alg.txt'
+      archSalNombre=archSalNombre[:-4] + "-" + (str)(arcsalnum)+ '.alg'
       archivoSalida=open(archSalNombre,"w")
       archivoSalida.write(MEMORIAB[i].TEXT)
       archivoSalida.close()
+      #WRITE OUTPUT FILE PATH TO INDEX (Arg 3)
+      index_name = sys.argv[3]
+      index = open(index_name, "a+")
+      archSalNombreforIndex=archSalNombre + "\n"
+      index.write(archSalNombreforIndex)
+      index.close()
 else:
   print frase.TEXT #----Salida si no habia constructos simplificables
   archSalNombre = sys.argv[2]
-  archSalNombre = archSalNombre[:-8] + ".alg.txt"
-  archivoSalida = open(archSalNombre,"w")
+  archSalNombre = archSalNombre[:-4] + ".alg"
+  archivoSalida = open(archSalNombre,"a+")
   archivoSalida.write(frase.TEXT)
   archivoSalida.close()
+  #WRITE OUTPUT FILE PATH TO INDEX (Arg 3)
+  index_name = sys.argv[3]
+  index = open(index_name, "a+")
+  archSalNombreforIndex=archSalNombre + "\n"
+  index.write(archSalNombreforIndex)
+  index.close()
 
 
 #FIN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
