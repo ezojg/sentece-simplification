@@ -21,7 +21,13 @@ BATCH_KEYWORD=${BATCH_KEYWORD::-4}
 
 #ELIMINAR FORMATO DE ARTÍCULO CON "SANITIZADOR"
 echo "Sanitizing text for $BATCH_KEYWORD batch..."
-rm ./sanitized_sentences/*
+if [ -z "$(ls -A ./sanitized_sentences/)" ]; then
+   echo "directory is clean."
+else
+   #echo "Not Empty"
+   rm ./sanitized_sentences/*
+fi
+#rm ./sanitized_sentences/*
 cd ./10pack_sentences
 for i in $(\ls $BATCH_KEYWORD*)
 do
@@ -34,7 +40,14 @@ cd $SCRIPT_PATH
 
 #SEPARA EN ORACIONES INDIVIDUALES
 echo "Splitting..."
-rm ./split_sentences/*
+echo "Sanitizing text for $BATCH_KEYWORD batch..."
+if [ -z "$(ls -A ./split_sentences/)" ]; then
+   echo "directory is clean."
+else
+   #echo "Not Empty"
+   rm ./split_sentences/*
+fi
+#rm ./split_sentences/*
 cd ./sanitized_sentences
 for l in $(\ls $BATCH_KEYWORD*)
 do
@@ -47,7 +60,13 @@ cd $SCRIPT_PATH
 
 #ANALIZAR EN ISIMP
 echo "Analysing in iSimp..."
-rm ./iSimp_sentences/*
+if [ -z "$(ls -A ../iSimp_sentences/)" ]; then
+   echo "directory is clean."
+else
+   #echo "Not Empty"
+   rm ./iSimp_sentences/*
+fi
+#rm ./iSimp_sentences/*
 cd ./split_sentences
 for j in $(\ls $BATCH_KEYWORD*)
 do
