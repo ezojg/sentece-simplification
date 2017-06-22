@@ -1,12 +1,22 @@
 #!/bin/bash
 
+#Validate arguments
+if [[ ! ("$#" == 2 ) ]]; then 
+    echo 'Usage: ./sentence-simplification-main.sh <batch_keyword> <output_file_path>'
+    exit 1
+fi
 
 SCRIPT_PATH=$(cd `dirname $0` && pwd)
 #Define aquí la palabra clave del grupo de oraciones a simplificar.
-BATCH_KEYWORD=ejemplo
-
+BATCH_KEYWORD=$1
+OUTPUT_INDEX_FILE_PATH=$2
 cd $SCRIPT_PATH
 
+
+
+
+#Remove input_file's file extension
+BATCH_KEYWORD=${BATCH_KEYWORD::-4}
 
 
 #ELIMINAR FORMATO DE ARTÍCULO CON "SANITIZADOR"
@@ -46,7 +56,9 @@ do
 done
 cd $SCRIPT_PATH
 
-
+#CREA INDICE DE ARCHIVOS SIMPLIFICADOS
+#touch $SCRIPT_PATH/index.txt
+>| $OUTPUT_INDEX_FILE_PATH
 
 #ALIMENTAR A ALGORITMO 
 echo "Analysing in Algorithm..."
@@ -54,7 +66,6 @@ cd ./iSimp_sentences
 for k in $(\ls $BATCH_KEYWORD*)
 do
 	echo $k
-	python2 $SCRIPT_PATH/simplifier.py $SCRIPT_PATH/iSimp_sentences/$k $SCRIPT_PATH/algorithm_sentences/$k
+	python2 $SCRIPT_PATH/simplifier.py $SCRIPT_PATH/iSimp_sentences/$k $SCRIPT_PATH/algorithm_sentences/$k $OUTPUT_INDEX_FILE_PATH
 done
 cd $SCRIPT_PATH
-
