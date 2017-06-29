@@ -21,8 +21,7 @@ BATCH_KEYWORD=${BATCH_KEYWORD::-4}
 
 #ELIMINAR FORMATO DE ARTÍCULO CON "SANITIZADOR"
 echo "Sanitizing text for $BATCH_KEYWORD batch..."
-if [ -z "$(ls -A ./sanitized_sentences/)" ]; then
-   echo "directory is clean."
+if [ -z "$(ls -A ./sanitized_sentences/)" ]; then :
 else
    #echo "Not Empty"
    rm ./sanitized_sentences/*
@@ -39,20 +38,21 @@ cd $SCRIPT_PATH
 
 
 #SEPARA EN ORACIONES INDIVIDUALES
-echo "Splitting..."
-echo "Sanitizing text for $BATCH_KEYWORD batch..."
-if [ -z "$(ls -A ./split_sentences/)" ]; then
-   echo "directory is clean."
-else
-   #echo "Not Empty"
-   rm ./split_sentences/*
+echo "Splitting text for $BATCH_KEYWORD batch..."
+if [ -z "$(ls -A ./split_sentences/)" ]; then :
+	else
+		rm ./split_sentences/*
 fi
-#rm ./split_sentences/*
+
 cd ./sanitized_sentences
 for l in $(\ls $BATCH_KEYWORD*)
 do
 	echo $l
-	python2 $SCRIPT_PATH/splitter.py $SCRIPT_PATH/sanitized_sentences/$l $SCRIPT_PATH/split_sentences/$l	
+	BARE_NAME=$(echo $l | cut -f 1 -d '.') 
+	BARE_NAME+="_"
+	LENGTH="$(wc -l < $l)"
+	LENGTH="$(echo "${#LENGTH}")"
+	split -a $LENGTH -d -l 1 --additional-suffix=.spt $SCRIPT_PATH/sanitized_sentences/$l $SCRIPT_PATH/split_sentences/$BARE_NAME
 done
 cd $SCRIPT_PATH
 
@@ -60,8 +60,7 @@ cd $SCRIPT_PATH
 
 #ANALIZAR EN ISIMP
 echo "Analysing in iSimp..."
-if [ -z "$(ls -A ./iSimp_sentences/)" ]; then
-   echo "directory is clean."
+if [ -z "$(ls -A ./iSimp_sentences/)" ]; then :
 else
    #echo "Not Empty"
    rm ./iSimp_sentences/*
@@ -81,6 +80,11 @@ cd $SCRIPT_PATH
 
 #ALIMENTAR A ALGORITMO 
 echo "Analysing in Algorithm..."
+if [ -z "$(ls -A ./algorithm_sentences/)" ]; then :
+else
+   #echo "Not Empty"
+   rm ./algorithm_sentences/*
+fi
 cd ./iSimp_sentences
 for k in $(\ls $BATCH_KEYWORD*)
 do
