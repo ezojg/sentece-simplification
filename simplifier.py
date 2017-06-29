@@ -386,11 +386,19 @@ if ((frase.TYPE.find('sentence')) !=- 1) and (frase.SIMP!=[]) and (frase.SIMP[0]
   for i in range(len(MEMORIAB)):
     if MEMORIAB[i].FLAG == True:
       arcsalnum = arcsalnum + 1
+  length = len(str(arcsalnum))
+  #print('{:03d}'.format(arcsalnum))  # python >= 2.7 + python3
+#  >>> n = '4'
+#>>> print n.zfill(3)
+  arcsalnum = 0
+  for i in range(len(MEMORIAB)):
+    if MEMORIAB[i].FLAG == True:
+      arcsalnum = arcsalnum + 1
       print MEMORIAB[i].TEXT#Salida 
       archSalNombre = sys.argv[2]
-      archSalNombre=archSalNombre[:-4] + "-" + (str)(arcsalnum)+ '.alg'
+      archSalNombre=archSalNombre[:-4] + "-" + (str(arcsalnum)).zfill(length) + '.alg'
       archivoSalida=open(archSalNombre,"w")
-      archivoSalida.write(MEMORIAB[i].TEXT)
+      archivoSalida.write(MEMORIAB[i].TEXT+"\n")##
       archivoSalida.close()
       #WRITE OUTPUT FILE PATH TO INDEX (Arg 3)
       index_name = sys.argv[3]
@@ -403,7 +411,7 @@ else:
   archSalNombre = sys.argv[2]
   archSalNombre = archSalNombre[:-4] + ".alg"
   archivoSalida = open(archSalNombre,"a+")
-  archivoSalida.write(frase.TEXT)
+  archivoSalida.write(frase.TEXT+"\n")##
   archivoSalida.close()
   #WRITE OUTPUT FILE PATH TO INDEX (Arg 3)
   index_name = sys.argv[3]
